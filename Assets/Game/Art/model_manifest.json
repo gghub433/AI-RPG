@@ -1,0 +1,107 @@
+{
+  "_comment": "Model manifest for Rebirth: Eclipse System. Each entry maps a model KEY (the id the game's code/data references, e.g. HeroStage.armorSetId, EnemyArchetype.enemyId) to a Tripo3D generation prompt and a target import path. Generate via Tools/tripo_generate.py (text-to-3D) or by hand on studio.tripo3d.ai, export GLB, and drop the file at targetPath. Characters that need rigging should use Tripo's rig step or an external rig — see Docs/Build/03_ModelPipeline_Tripo3D.md.",
+  "styleGuide": "stylized anime dark-fantasy, PBR game-ready topology, clean silhouette, black/silver palette with violet accents for Eclipse-aligned subjects, neutral A-pose for characters, no base/ground plane, single asset centered",
+  "defaults": {
+    "format": "glb",
+    "faceLimit": 40000,
+    "pbr": true
+  },
+  "models": [
+    {
+      "key": "char_arden_reborn",
+      "category": "character",
+      "prompt": "stylized anime dark-fantasy young man, 23 years old, tall athletic, black hair with silver streaks, violet eyes, a few scars, worn commoner traveling clothes, A-pose, game-ready PBR",
+      "targetPath": "Assets/Game/Art/Models/Characters/Arden/arden_reborn.glb",
+      "rig": true
+    },
+    {
+      "key": "char_arden_abyss_awakening",
+      "category": "character",
+      "prompt": "stylized anime dark-fantasy warrior, same young man black hair silver streaks violet eyes, early abyss-touched dark armor with faint violet veining, asymmetric left pauldron, A-pose, game-ready PBR",
+      "targetPath": "Assets/Game/Art/Models/Characters/Arden/arden_abyss.glb",
+      "rig": true
+    },
+    {
+      "key": "char_arden_eclipse_sovereign",
+      "category": "character",
+      "prompt": "stylized anime dark-fantasy knight, black obsidian metal armor with silver edges, asymmetric pauldrons, layered breastplate with a glowing violet crystal in the chest, armored gauntlets and greaves, long black cloak with violet interior, full-face helm with narrow visor and crown-like silver crests, A-pose, game-ready PBR",
+      "targetPath": "Assets/Game/Art/Models/Characters/Arden/arden_eclipse_sovereign.glb",
+      "rig": true
+    },
+    {
+      "key": "char_arden_absolute_eclipse",
+      "category": "character",
+      "prompt": "stylized anime dark-fantasy apex knight, final evolution of black-silver Eclipse Sovereign armor, crystal and glowing runework spread across the whole silhouette, cloak like a field of eclipse light, violet energy, A-pose, game-ready PBR",
+      "targetPath": "Assets/Game/Art/Models/Characters/Arden/arden_absolute_eclipse.glb",
+      "rig": true
+    },
+    {
+      "key": "weapon_voidrend",
+      "category": "weapon",
+      "prompt": "legendary two-handed greatsword, broad black blade, bright silver cutting edge, ancient glowing violet runes along the fuller, unusual ornate crossguard, dark-fantasy, game-ready PBR, no character",
+      "targetPath": "Assets/Game/Art/Models/Weapons/voidrend.glb",
+      "rig": false
+    },
+
+    { "key": "char_liana_evergrace", "category": "character", "prompt": "stylized anime elven archer woman, 24, long silver hair, calm proud expression, elegant green-and-leather ranger outfit, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/liana_evergrace.glb", "rig": true },
+    { "key": "char_serafina_walter", "category": "character", "prompt": "stylized anime woman knight, 25, white-and-gold plate armor, sword and shield at side, honorable stern, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/serafina_walter.glb", "rig": true },
+    { "key": "char_mirael_nox", "category": "character", "prompt": "stylized anime dark-seal mage woman, 23, black hair, violet eyes, dark arcane robes with sigils, sardonic, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/mirael_nox.glb", "rig": true },
+    { "key": "char_evelyn_rosen", "category": "character", "prompt": "stylized anime noble trade-house heiress woman, 26, fine merchant finery, composed, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/evelyn_rosen.glb", "rig": true },
+    { "key": "char_kaela_draken", "category": "character", "prompt": "stylized anime demon-blooded warrior woman, 27, red eyes, small horns, heavy dark armor, greatsword, fierce, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/kaela_draken.glb", "rig": true },
+    { "key": "char_elysia_frost", "category": "character", "prompt": "stylized anime healer woman, 22, light-blue hair, white-and-blue robes, magic staff, gentle, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/elysia_frost.glb", "rig": true },
+    { "key": "char_vespera_morn", "category": "character", "prompt": "stylized anime assassin woman, 28, sleek black light armor, hood, daggers, silent, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/vespera_morn.glb", "rig": true },
+    { "key": "char_ariel_sylvan", "category": "character", "prompt": "stylized anime ruin-researcher woman, 21, practical explorer gear with satchels, holding a small crystal, curious, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/ariel_sylvan.glb", "rig": true },
+    { "key": "char_nora_blackwood", "category": "character", "prompt": "stylized anime mercenary captain woman, 30, weathered practical armor, confident commander, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/nora_blackwood.glb", "rig": true },
+    { "key": "char_iris_ashford", "category": "character", "prompt": "stylized anime mysterious woman, ageless adult, flowing pale robes with faint eclipse-violet glow, serene enigmatic, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/iris_ashford.glb", "rig": true },
+
+    { "key": "char_darian_crowe", "category": "character", "prompt": "stylized anime rival swordsman, 25, lean fast duelist, light armor, one-handed sword, proud smirk, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/darian_crowe.glb", "rig": true },
+    { "key": "char_rhayne_vald", "category": "character", "prompt": "stylized anime veteran commander man, 29, battered elite expedition armor, grim guarded, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/rhayne_vald.glb", "rig": true },
+    { "key": "char_garret_stone", "category": "character", "prompt": "stylized anime legendary blacksmith man, 42, muscular, leather apron, soot-stained, hammer, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/garret_stone.glb", "rig": true },
+    { "key": "char_lucian_weir", "category": "character", "prompt": "stylized anime spatial-seal mage man, 35, scholarly robes with floating sigils, staff, thoughtful, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/lucian_weir.glb", "rig": true },
+    { "key": "char_kain_drake", "category": "character", "prompt": "stylized anime monster hunter man, 27, dual blades, rugged traveling gear, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/kain_drake.glb", "rig": true },
+    { "key": "char_toren_blackford", "category": "character", "prompt": "stylized anime war veteran man, 48, scarred, heavy armor, two-handed axe, stoic trainer, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/toren_blackford.glb", "rig": true },
+    { "key": "char_fabian_mercer", "category": "character", "prompt": "stylized anime rare-artifact merchant man, 31, flashy traveling-trader coat, sly, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/fabian_mercer.glb", "rig": true },
+    { "key": "char_edric_solmir", "category": "character", "prompt": "stylized anime human king, 55, regal royal robes and crown, commanding guarded, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/edric_solmir.glb", "rig": true },
+    { "key": "char_zephyr_nightvale", "category": "character", "prompt": "stylized anime immortal gatekeeper, ageless, otherworldly ornate robes with glyph motifs, ambiguous, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/zephyr_nightvale.glb", "rig": true },
+    { "key": "char_malkar", "category": "character", "prompt": "stylized anime ancient being antagonist, humanoid-but-wrong, void-and-eclipse energy, imposing, dark-fantasy, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Characters/Cast/malkar.glb", "rig": true },
+
+    { "key": "armor_iron_vanguard", "category": "armor_set", "prompt": "heavy steel plate armor set, vanguard knight, utilitarian, game-ready PBR, displayed on invisible mannequin, no head", "targetPath": "Assets/Game/Art/Models/Armor/iron_vanguard.glb", "rig": false },
+    { "key": "armor_moonveil", "category": "armor_set", "prompt": "silver elven warrior armor set, elegant engraved filigree, light medium weight, game-ready PBR, on invisible mannequin, no head", "targetPath": "Assets/Game/Art/Models/Armor/moonveil.glb", "rig": false },
+    { "key": "armor_ashen_knight", "category": "armor_set", "prompt": "charred blackened armor set with ancient glowing sigils, scorched metal, dark-fantasy, game-ready PBR, on invisible mannequin, no head", "targetPath": "Assets/Game/Art/Models/Armor/ashen_knight.glb", "rig": false },
+    { "key": "armor_bloodfang", "category": "armor_set", "prompt": "aggressive hunter armor set, fanged spiked pauldrons, crimson leather and dark metal, game-ready PBR, on invisible mannequin, no head", "targetPath": "Assets/Game/Art/Models/Armor/bloodfang.glb", "rig": false },
+    { "key": "armor_dragon_sovereign", "category": "armor_set", "prompt": "draconic plate armor set, overlapping scale plates, horned shoulders, regal, game-ready PBR, on invisible mannequin, no head", "targetPath": "Assets/Game/Art/Models/Armor/dragon_sovereign.glb", "rig": false },
+
+    { "key": "helm_closed_knight", "category": "helmet", "prompt": "closed full-face knight helmet, steel, narrow eye slit, game-ready PBR, single prop", "targetPath": "Assets/Game/Art/Models/Helmets/closed_knight.glb", "rig": false },
+    { "key": "helm_magic_mask", "category": "helmet", "prompt": "ornate magic mask helmet, arcane engravings, faintly glowing, game-ready PBR, single prop", "targetPath": "Assets/Game/Art/Models/Helmets/magic_mask.glb", "rig": false },
+    { "key": "helm_horned", "category": "helmet", "prompt": "horned war helmet, dark metal, curved horns, game-ready PBR, single prop", "targetPath": "Assets/Game/Art/Models/Helmets/horned.glb", "rig": false },
+    { "key": "helm_ancient_crown", "category": "helmet", "prompt": "ancient king crown, tarnished gold with gemstones, game-ready PBR, single prop", "targetPath": "Assets/Game/Art/Models/Helmets/ancient_crown.glb", "rig": false },
+    { "key": "helm_scout_light", "category": "helmet", "prompt": "light leather scout hood with metal reinforcement, game-ready PBR, single prop", "targetPath": "Assets/Game/Art/Models/Helmets/scout_light.glb", "rig": false },
+
+    { "key": "crystal_flame_core", "category": "crystal", "prompt": "glowing orange-red magic crystal gem, faceted, internal flame glow, game-ready PBR, single floating gem, no base", "targetPath": "Assets/Game/Art/Models/Crystals/flame_core.glb", "rig": false },
+    { "key": "crystal_frost_shard", "category": "crystal", "prompt": "glowing pale-blue magic crystal shard, sharp facets, frosty mist, game-ready PBR, single floating gem, no base", "targetPath": "Assets/Game/Art/Models/Crystals/frost_shard.glb", "rig": false },
+    { "key": "crystal_storm", "category": "crystal", "prompt": "glowing yellow-white magic crystal, crackling lightning inside, game-ready PBR, single floating gem, no base", "targetPath": "Assets/Game/Art/Models/Crystals/storm.glb", "rig": false },
+    { "key": "crystal_earthheart", "category": "crystal", "prompt": "glowing green-brown rugged magic crystal, stony facets, game-ready PBR, single floating gem, no base", "targetPath": "Assets/Game/Art/Models/Crystals/earthheart.glb", "rig": false },
+    { "key": "crystal_spirit_gem", "category": "crystal", "prompt": "glowing soft-cyan magic crystal, gentle radiance, game-ready PBR, single floating gem, no base", "targetPath": "Assets/Game/Art/Models/Crystals/spirit_gem.glb", "rig": false },
+    { "key": "crystal_void", "category": "crystal", "prompt": "glowing deep-violet-black magic crystal, swirling void energy, game-ready PBR, single floating gem, no base", "targetPath": "Assets/Game/Art/Models/Crystals/void.glb", "rig": false },
+    { "key": "crystal_eclipse_core", "category": "crystal", "prompt": "rare black crystal with a violet eclipse-corona glow, the rarest power source, ornate, game-ready PBR, single floating gem, no base", "targetPath": "Assets/Game/Art/Models/Crystals/eclipse_core.glb", "rig": false },
+
+    { "key": "enemy_wolf", "category": "enemy", "prompt": "dark-fantasy dire wolf, shaggy grey fur, menacing, A-pose quadruped, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Enemies/wolf.glb", "rig": true },
+    { "key": "enemy_goblin", "category": "enemy", "prompt": "stylized goblin, green skin, crude leather armor and dagger, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Enemies/goblin.glb", "rig": true },
+    { "key": "enemy_skeleton", "category": "enemy", "prompt": "undead skeleton warrior with rusty sword and shield, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Enemies/skeleton.glb", "rig": true },
+    { "key": "enemy_bandit", "category": "enemy", "prompt": "human bandit, hooded leather armor, short sword, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Enemies/bandit.glb", "rig": true },
+    { "key": "enemy_cursed_knight", "category": "enemy", "prompt": "cursed knight, corrupted dark armor with purple curse-glow cracks, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Enemies/cursed_knight.glb", "rig": true },
+    { "key": "enemy_mage", "category": "enemy", "prompt": "hostile dark robed mage with staff, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Enemies/mage.glb", "rig": true },
+    { "key": "enemy_demon", "category": "enemy", "prompt": "lesser demon, red skin, horns, clawed, dark-fantasy, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Enemies/demon.glb", "rig": true },
+    { "key": "enemy_golem", "category": "enemy", "prompt": "stone golem, rocky plated body with glowing core, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Enemies/golem.glb", "rig": true },
+
+    { "key": "boss_fallen_guardian", "category": "boss", "prompt": "towering fallen guardian construct, ancient armored colossus with a cracked glowing core, dark-fantasy, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Bosses/fallen_guardian.glb", "rig": true },
+    { "key": "boss_crimson_dragon", "category": "boss", "prompt": "crimson dragon, deep red scales, large wings, menacing, dark-fantasy, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Bosses/crimson_dragon.glb", "rig": true },
+    { "key": "boss_frost_queen", "category": "boss", "prompt": "frost queen, regal ice sorceress in a crystalline gown and crown, pale blue, dark-fantasy, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Bosses/frost_queen.glb", "rig": true },
+    { "key": "boss_abyssal_knight", "category": "boss", "prompt": "abyssal knight, massive void-black armor leaking violet energy, greatsword, dark-fantasy, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Bosses/abyssal_knight.glb", "rig": true },
+    { "key": "boss_the_betrayer", "category": "boss", "prompt": "the betrayer, a fallen expedition commander in battered elite armor, grim, dark-fantasy, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Bosses/the_betrayer.glb", "rig": true },
+    { "key": "boss_malakar_world_devourer", "category": "boss", "prompt": "Malakar the world devourer, ancient colossal cosmic horror entity, void and eclipse energy, many eyes, dark-fantasy, A-pose, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Bosses/malakar.glb", "rig": true },
+
+    { "key": "prop_eclipse_throne", "category": "prop", "prompt": "ancient obsidian throne radiating violet eclipse energy, ornate runes, dark-fantasy set piece, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Props/eclipse_throne.glb", "rig": false },
+    { "key": "prop_forge_anvil", "category": "prop", "prompt": "blacksmith anvil and forge with glowing embers, medieval fantasy prop, game-ready PBR", "targetPath": "Assets/Game/Art/Models/Props/forge_anvil.glb", "rig": false }
+  ]
+}

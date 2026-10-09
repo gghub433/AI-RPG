@@ -88,7 +88,13 @@ environment.
   the original brief (character models, hair/cloth materials, VFX, portraits,
   music, SFX, voice) is an open integration point, not represented by any
   placeholder primitive in this repo — the brief explicitly asked not to fake
-  finished art with cubes/emoji, so none was added.
+  finished art with cubes/emoji, so none was added. A **Tripo3D model pipeline**
+  is now set up (manifest of 58 models with prompts, a generation script, a Unity
+  import post-processor, and a key→prefab `ModelRegistry`) — but **no models were
+  generated**: the Tripo API host is blocked by this cloud session's egress policy,
+  so `Tools/tripo_generate.py` must be run from a machine with Tripo access, or
+  models generated on the Tripo web UI and dropped in. See
+  `Docs/Build/03_ModelPipeline_Tripo3D.md`.
 - **ScriptableObject data assets are not instantiated as `.asset` files.** The
   `ItemDefinition`/`QuestDefinition`/`NPCDefinition`/`ClassDefinition`/`CrystalDefinition`/
   `CraftingRecipe`/etc. *types* exist and are fully functional (and exercised by the
