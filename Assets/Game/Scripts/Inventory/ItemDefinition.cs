@@ -47,6 +47,9 @@ namespace RebirthEclipse.Inventory
         [Header("Random Affix Roll (gear)")]
         public bool hasRandomAffixes;
         [Range(0, 3)] public int maxRandomAffixes = 2;
+
+        [Header("Crystal Sockets (weapons/armor)")]
+        [Range(0, 3)] public int socketCount;
     }
 
     [Serializable]

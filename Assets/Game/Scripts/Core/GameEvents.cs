@@ -42,6 +42,15 @@ namespace RebirthEclipse.Core
         public static event Action<string, int> OnAffinityChanged;    // (npcId, newAffinity)
         public static event Action<string> OnRomanceUnlocked;         // (npcId)
 
+        // Economy
+        public static event Action<long> OnWalletChanged;             // (newTotalInCopper)
+        public static event Action<int> OnEclipseTokensChanged;       // (newTokenCount)
+
+        // Crafting / Crystals / Hero evolution
+        public static event Action<string, bool> OnCraftResolved;     // (recipeId, success)
+        public static event Action<string, string> OnCrystalSocketed; // (itemInstanceId, crystalId)
+        public static event Action<int> OnHeroStageChanged;           // (newStageIndex)
+
         // Save system
         public static event Action<int> OnGameSaved;                  // (slotIndex)
         public static event Action<int> OnGameLoaded;                 // (slotIndex)
@@ -73,6 +82,12 @@ namespace RebirthEclipse.Core
 
         public static void RaiseAffinityChanged(string npcId, int value) => OnAffinityChanged?.Invoke(npcId, value);
         public static void RaiseRomanceUnlocked(string npcId) => OnRomanceUnlocked?.Invoke(npcId);
+
+        public static void RaiseWalletChanged(long totalCopper) => OnWalletChanged?.Invoke(totalCopper);
+        public static void RaiseEclipseTokensChanged(int count) => OnEclipseTokensChanged?.Invoke(count);
+        public static void RaiseCraftResolved(string recipeId, bool success) => OnCraftResolved?.Invoke(recipeId, success);
+        public static void RaiseCrystalSocketed(string itemInstanceId, string crystalId) => OnCrystalSocketed?.Invoke(itemInstanceId, crystalId);
+        public static void RaiseHeroStageChanged(int stageIndex) => OnHeroStageChanged?.Invoke(stageIndex);
 
         public static void RaiseGameSaved(int slot) => OnGameSaved?.Invoke(slot);
         public static void RaiseGameLoaded(int slot) => OnGameLoaded?.Invoke(slot);

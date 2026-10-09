@@ -37,10 +37,27 @@ environment.
     recovery, and version-migration scaffolding.
   - Eclipse System HUD + a real-event-driven system-notification queue (no
     decorative/fake notifications).
-- **23 EditMode NUnit tests** across leveling, damage calculation, inventory
-  duplication guards, quest objective gating, Abyss absorption rules, and a real
-  filesystem save/load round-trip including corrupted-file recovery — written to
-  the actual production code paths, not mocks.
+- **~50 EditMode NUnit tests** across leveling, damage calculation, inventory
+  duplication guards, quest objective gating, Abyss absorption rules, a real
+  filesystem save/load round-trip including corrupted-file recovery, and the
+  second-wave systems below (economy overflow/anti-dup, crystal socket limits,
+  crafting input-atomicity, hero-stage gating) — written to the actual production
+  code paths, not mocks.
+- **Second content wave (new systems):**
+  - **Crystals** (`Scripts/Crystals/`): 7-school `CrystalDefinition` + quality tiers,
+    `CrystalSocketManager` enforcing socket-count limits and compatibility gates,
+    socketing consumes/returns crystals (no duplication), save-integrated.
+  - **Economy** (`Scripts/Economy/`): `CurrencyWallet` (Copper/Silver/Gold fungible
+    pool + separate non-convertible Eclipse Tokens, overflow-safe, no arbitrary
+    setter) and `Vendor` with reputation-scaled pricing and finite stock.
+  - **Crafting** (`Scripts/Crafting/`): `CraftingRecipe` (create + upgrade kinds),
+    `CraftingStation` with validate-before-consume atomicity and a deterministic
+    RNG seam, per-instance upgrade levels persisted in saves.
+  - **Hero evolution** (`Scripts/Character/HeroStageController.cs`): Arden's 4 stages
+    (Reborn → Abyss Awakening → Eclipse Sovereign → Absolute Eclipse), gated on BOTH
+    a story flag and a Sync Rate threshold, permanent once achieved.
+  - `SaveData`/`SaveController` extended to persist wallet, socketed crystals, item
+    upgrade levels, and hero stage; region-unlock state is now restored on load too.
 - **Full story documentation:** overview, all 12 arcs with concrete scenes,
   dialogue beats, quests, bosses, and story flags (Arcs I–III especially
   detailed as the vertical-slice target; IV–XII as complete structured
@@ -73,12 +90,15 @@ environment.
   placeholder primitive in this repo — the brief explicitly asked not to fake
   finished art with cubes/emoji, so none was added.
 - **ScriptableObject data assets are not instantiated as `.asset` files.** The
-  `ItemDefinition`/`QuestDefinition`/`NPCDefinition`/`ClassDefinition`/etc.
-  *types* exist and are fully functional (and exercised by the EditMode tests
-  via `ScriptableObject.CreateInstance`), but the actual game-content assets
-  (specific items, the 8 class assets, NPC profiles, quest instances for Arcs
-  I–XII) need to be created in-editor from the design docs — this is content
-  authoring, not missing code.
+  `ItemDefinition`/`QuestDefinition`/`NPCDefinition`/`ClassDefinition`/`CrystalDefinition`/
+  `CraftingRecipe`/etc. *types* exist and are fully functional (and exercised by the
+  EditMode tests via `ScriptableObject.CreateInstance`), but the actual game-content
+  assets (specific items, the 8 class assets, 7 crystals, armor sets, the named cast,
+  quest instances for Arcs I–XII) need to be created in-editor from the design docs —
+  this is content authoring, not missing code.
+- **Arc docs not yet renamed to the canonical cast/world.** The 12 arc documents still
+  use the earlier draft's names; `Docs/World/00_WorldBible.md` establishes the canonical
+  names and a mapping table, but a full rewrite of the arcs to match is a follow-up task.
 - **`EditorBuildSettings.asset` / most of `ProjectSettings/*.asset`** are not
   hand-written. These are Editor-generated, GUID-dependent files; the ones
   genuinely safe to author by hand (`ProjectVersion.txt`) are included, but

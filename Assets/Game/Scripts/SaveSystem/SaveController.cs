@@ -29,6 +29,10 @@ namespace RebirthEclipse.SaveSystem
         [SerializeField] private EclipseSystemModel eclipseSystem;
         [SerializeField] private AbyssAbsorptionSystem abyss;
         [SerializeField] private World.RegionProgressTracker regionProgress;
+        [SerializeField] private Economy.CurrencyWallet wallet;
+        [SerializeField] private Crystals.CrystalSocketManager crystalSockets;
+        [SerializeField] private Character.HeroStageController heroStage;
+        [SerializeField] private Crafting.CraftingStation craftingStation;
 
         [SerializeField] private float autosaveIntervalSeconds = 180f;
         private float autosaveTimer;
@@ -111,7 +115,12 @@ namespace RebirthEclipse.SaveSystem
                 abyssEnergy = abyss.CurrentEnergy,
                 unlockedMemoryFragments = abyss.UnlockedMemoryFragments.ToList(),
                 unlockedRegionIds = regionProgress != null ? regionProgress.UnlockedRegionIds.ToList() : new List<string>(),
-                unlockedFastTravelPointIds = regionProgress != null ? regionProgress.UnlockedFastTravelIds.ToList() : new List<string>()
+                unlockedFastTravelPointIds = regionProgress != null ? regionProgress.UnlockedFastTravelIds.ToList() : new List<string>(),
+                walletCopper = wallet != null ? wallet.TotalCopper : 0,
+                eclipseTokens = wallet != null ? wallet.EclipseTokens : 0,
+                socketedCrystals = crystalSockets != null ? crystalSockets.ExportForSave() : new Dictionary<string, List<string>>(),
+                itemUpgradeLevels = craftingStation != null ? craftingStation.UpgradeLevels.Export() : new Dictionary<string, int>(),
+                heroStageIndex = heroStage != null ? heroStage.CurrentStageIndex : 0
             };
             return data;
         }
@@ -148,6 +157,12 @@ namespace RebirthEclipse.SaveSystem
             foreach (var kv in data.abyssResistances)
                 if (System.Enum.TryParse<DamageType>(kv.Key, out var dt)) resistances[dt] = kv.Value;
             abyss.LoadFromSave(data.abyssEnergy, resistances, data.unlockedMemoryFragments, data.absorbedEnemyInstanceIds);
+
+            if (regionProgress != null) regionProgress.LoadFromSave(data.unlockedRegionIds, data.unlockedFastTravelPointIds);
+            if (wallet != null) wallet.LoadFromSave(data.walletCopper, data.eclipseTokens);
+            if (crystalSockets != null) crystalSockets.LoadFromSave(data.socketedCrystals ?? new Dictionary<string, List<string>>());
+            if (craftingStation != null) craftingStation.UpgradeLevels.Load(data.itemUpgradeLevels ?? new Dictionary<string, int>());
+            if (heroStage != null) heroStage.LoadFromSave(data.heroStageIndex);
 
             playtimeAccumulator = data.totalPlaytimeSeconds;
         }

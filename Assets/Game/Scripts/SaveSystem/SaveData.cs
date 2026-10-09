@@ -51,6 +51,15 @@ namespace RebirthEclipse.SaveSystem
         public List<string> unlockedMemoryFragments = new List<string>();
         public List<string> absorbedEnemyInstanceIds = new List<string>();
 
+        // Economy
+        public long walletCopper;
+        public int eclipseTokens;
+
+        // Crystals / Crafting / Hero evolution
+        public Dictionary<string, List<string>> socketedCrystals = new Dictionary<string, List<string>>(); // itemInstanceId -> crystalIds
+        public Dictionary<string, int> itemUpgradeLevels = new Dictionary<string, int>();                   // itemInstanceId -> level
+        public int heroStageIndex;
+
         // World
         public List<string> unlockedRegionIds = new List<string>();
         public List<string> unlockedFastTravelPointIds = new List<string>();
